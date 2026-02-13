@@ -12,6 +12,7 @@
     "lint:staged": "lint-staged"
   },
   "dependencies": {
+    "@nuxt/fonts": "0.13.0",
     "nuxt": "^4.3.1",
     "tailwindcss": "^4.1.18",
     "vue": "^3.5.28",

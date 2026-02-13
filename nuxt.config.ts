@@ -2,11 +2,14 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/eslint'],
+  modules: ['@nuxt/eslint', '@nuxt/fonts'],
   devtools: { enabled: true },
   app: {
     head: {
       title: 'Escape Room',
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+      ],
     },
   },
   css: ['~/assets/css/main.css'],
