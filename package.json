@@ -12,7 +12,7 @@
     "lint:staged": "lint-staged"
   },
   "dependencies": {
-    "@nuxt/fonts": "0.13.0",
+    "@nuxt/fonts": "0.14.0",
     "@vite-pwa/nuxt": "1.1.1",
     "nuxt": "^4.3.1",
     "tailwindcss": "^4.1.18",
@@ -24,5 +24,6 @@
     "@tailwindcss/vite": "^4.1.18",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7"
-  }
+  },
+  "packageManager": "pnpm@10.30.0+sha512.2b5753de015d480eeb88f5b5b61e0051f05b4301808a82ec8b840c9d2adf7748eb352c83f5c1593ca703ff1017295bc3fdd3119abb9686efc96b9fcb18200937"
 }
