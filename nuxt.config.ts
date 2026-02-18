@@ -7,10 +7,6 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: 'Escape Room',
-      link: [
-        { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
-        { rel: 'apple-touch-icon', href: '/apple-touch-icon-180x180.png' },
-      ],
     },
   },
   css: ['~/assets/css/main.css'],
