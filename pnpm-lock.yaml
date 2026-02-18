@@ -36,9 +36,15 @@ importers:
       husky:
         specifier: ^9.1.7
         version: 9.1.7
+      is-ci:
+        specifier: ^4.1.0
+        version: 4.1.0
       lint-staged:
         specifier: ^16.2.7
         version: 16.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
 
 packages:
 
@@ -3397,6 +3403,10 @@ packages:
   is-callable@1.2.7:
     resolution: {integrity: sha512-1BC0BVFhS/p0qtw6enp8e+8OD0UrK0oFLztSjNzhcKA3WDuJxxAPXzPuPtKkjEY9UUoEWlX/8fgKeu2S8i9JTA==}
     engines: {node: '>= 0.4'}
+
+  is-ci@4.1.0:
+    resolution: {integrity: sha512-Ab9bQDQ11lWootZUI5qxgN2ZXwxNI5hTwnsvOc1wyxQ7zQ8OkEDw79mI0+9jI3x432NfwbVRru+3noJfXF6lSQ==}
+    hasBin: true
 
   is-core-module@2.16.1:
     resolution: {integrity: sha512-UfoeMA6fIJ8wTYFEUjelnaGI67v6+N7qXJEvQuIGa99l4xsCruSYOVSQ0uPANn4dAzm8lkYPaKLrrijLq7x23w==}
@@ -9233,6 +9243,10 @@ snapshots:
       builtin-modules: 5.0.0
 
   is-callable@1.2.7: {}
+
+  is-ci@4.1.0:
+    dependencies:
+      ci-info: 4.4.0
 
   is-core-module@2.16.1:
     dependencies:
