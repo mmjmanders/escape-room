@@ -13,6 +13,7 @@
     "lint:staged": "lint-staged"
   },
   "dependencies": {
+    "@nuxt/eslint": "1.15.1",
     "@nuxt/fonts": "0.14.0",
     "@vite-pwa/nuxt": "1.1.1",
     "nuxt": "^4.3.1",
@@ -21,8 +22,8 @@
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
-    "@nuxt/eslint": "1.15.1",
     "@tailwindcss/vite": "^4.1.18",
+    "eslint": "^9.39.2",
     "husky": "^9.1.7",
     "is-ci": "^4.1.0",
     "lint-staged": "^16.2.7",
