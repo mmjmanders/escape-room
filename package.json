@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "lint:staged": "lint-staged",
     "postinstall": "nuxt prepare",
-    "prepare": "is-ci || husky",
+    "prepare": "is-ci || (husky && sst install)",
     "preview": "nuxt preview"
   },
   "dependencies": {
