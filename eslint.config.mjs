@@ -5,7 +5,7 @@ export default withNuxt(
   // Your custom configs here
   {
     rules: {
-      '@typescript-eslint/triple-slash-reference': 'warn',
+      '@typescript-eslint/triple-slash-reference': 'off',
     },
   },
 )
