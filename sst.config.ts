@@ -9,6 +9,6 @@ export default $config({
     }
   },
   async run() {
-    new sst.aws.Nuxt('Escape Room')
+    new sst.aws.Nuxt('EscapeRoom')
   },
 })
