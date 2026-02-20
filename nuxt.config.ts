@@ -4,11 +4,6 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineNuxtConfig({
   modules: ['@nuxt/eslint', '@nuxt/fonts', '@vite-pwa/nuxt'],
   devtools: { enabled: true },
-  app: {
-    head: {
-      title: 'Escape Room',
-    },
-  },
   css: ['~/assets/css/main.css'],
   compatibilityDate: '2025-07-15',
   nitro: {
