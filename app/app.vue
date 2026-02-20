@@ -4,6 +4,9 @@ import appleTouchIcon from '~/assets/apple-touch-icon-180x180.png'
 
 useHead({
   title: 'Escape Room',
+  htmlAttrs: {
+    lang: 'nl',
+  },
   link: [
     { rel: 'icon', href: favicon, type: 'image/svg+xml' },
     { rel: 'apple-touch-icon', href: appleTouchIcon },
@@ -16,8 +19,8 @@ useHead({
 
 <template>
   <NuxtPwaManifest />
-  <div>
+  <main>
     <NuxtRouteAnnouncer />
     <NuxtWelcome />
-  </div>
+  </main>
 </template>
