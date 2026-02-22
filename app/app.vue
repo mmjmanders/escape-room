@@ -15,12 +15,13 @@ useHead({
     { name: 'description', content: 'Escape Room' },
   ],
 })
+
+const escapeRoomProgressStore = useEscapeRoomProgressStore()
 </script>
 
 <template>
   <NuxtPwaManifest />
   <main>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
+    <Game :progress="escapeRoomProgressStore.progress" />
   </main>
 </template>
