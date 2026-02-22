@@ -9,6 +9,10 @@ export default $config({
     }
   },
   async run() {
-    new sst.aws.Nuxt('EscapeRoom')
+    new sst.aws.Nuxt('EscapeRoom', {
+      server: {
+        runtime: 'nodejs22.x',
+      },
+    })
   },
 })
