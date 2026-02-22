@@ -11,12 +11,18 @@ export default defineNuxtConfig({
   ],
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
+  future: {
+    compatibilityVersion: 4,
+  },
   compatibilityDate: '2025-07-15',
   nitro: {
     preset: 'aws-lambda',
   },
   vite: {
     plugins: [tailwindcss()],
+    ssr: {
+      noExternal: ['vue', 'vue-router'],
+    },
   },
   eslint: {
     config: {
