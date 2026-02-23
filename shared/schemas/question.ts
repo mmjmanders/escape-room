@@ -1,6 +1,6 @@
 import * as z from 'zod'
 
-export const question = z.object({
+export const questionSchema = z.object({
   question: z.string(),
   options: z.object({
     a: z.string(),
@@ -9,4 +9,4 @@ export const question = z.object({
   }),
 }).strip()
 
-export type Question = z.infer<typeof question>
+export type Question = z.infer<typeof questionSchema>

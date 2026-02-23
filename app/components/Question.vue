@@ -1,9 +1,26 @@
 <script setup lang="ts">
+import { useEscapeRoomTimerStore } from '~/stores/escape-room-timer'
+
 const props = defineProps<{
   progress: number
 }>()
 
+const selectedAnswer = ref<string | undefined>(undefined)
 const { data } = useFetch(`/api/question${props.progress}`)
+const { execute, error } = useFetch(`/api/question${props.progress}`, { immediate: false, watch: false, method: 'POST', body: computed(() => ({ answer: selectedAnswer.value })) })
+
+const submit = async () => {
+  if (selectedAnswer.value) await execute()
+}
+
+const escapeRoomTimerStore = useEscapeRoomTimerStore()
+
+watch(error, (err) => {
+  if (err) {
+    escapeRoomTimerStore.togglePenalty()
+    setTimeout(escapeRoomTimerStore.togglePenalty, 5000)
+  }
+})
 </script>
 
 <template>
@@ -20,6 +37,7 @@ const { data } = useFetch(`/api/question${props.progress}`)
       >
         <input
           :id="'option-' + option"
+          v-model="selectedAnswer"
           name="answer"
           type="radio"
           :value="option"
@@ -31,6 +49,14 @@ const { data } = useFetch(`/api/question${props.progress}`)
         >{{ answer }}</label>
       </div>
     </div>
+    <button
+      class="w-fit disabled:cursor-not-allowed"
+      type="button"
+      :disabled="escapeRoomTimerStore.penalized"
+      @click="submit"
+    >
+      Versturen
+    </button>
   </div>
 </template>
 
