@@ -10,11 +10,19 @@
         @apply font-sans;
     }
 
+    body {
+        @apply p-2
+    }
+
     h1, h2, h3, h4, h5, h6 {
         @apply font-serif;
     }
 
     h1 {
-        @apply text-4xl;
+        @apply text-6xl mb-4;
+    }
+
+    main {
+        @apply w-full max-w-4xl mx-auto;
     }
 }

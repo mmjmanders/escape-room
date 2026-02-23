@@ -7,7 +7,6 @@ defineProps<{
 </script>
 
 <template>
-  <h1>Vraag {{ progress }}</h1>
   <Question :progress="progress" />
 </template>
 
