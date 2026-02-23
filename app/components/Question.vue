@@ -59,7 +59,7 @@ watch(status, (res) => {
     <button
       class="btn btn-primary w-fit disabled:cursor-not-allowed"
       type="button"
-      :disabled="escapeRoomTimerStore.penalized"
+      :disabled="escapeRoomTimerStore.canSubmit"
       @click="submit"
     >
       Versturen

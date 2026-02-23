@@ -2,6 +2,7 @@ export const useEscapeRoomTimerStore = defineStore('escape-room-timer', () => {
   const timer = useLocalStorage('escape-room-timer', 10 * 60, { initOnMounted: true })
   const penalized = ref<boolean>(false)
   const isExpired = computed(() => timer.value <= 0)
+  const canSubmit = computed(() => !isExpired.value && !penalized.value)
 
   function decrement() {
     if (isExpired.value) return
@@ -13,6 +14,6 @@ export const useEscapeRoomTimerStore = defineStore('escape-room-timer', () => {
   }
 
   return {
-    timer, isExpired, decrement, penalized, togglePenalty,
+    timer, isExpired, decrement, penalized, togglePenalty, canSubmit,
   }
 })
