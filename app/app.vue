@@ -3,7 +3,6 @@ import favicon from '~/assets/favicon.svg'
 import appleTouchIcon from '~/assets/apple-touch-icon-180x180.png'
 
 useHead({
-  title: 'Escape Room',
   htmlAttrs: {
     lang: 'nl',
   },
@@ -18,12 +17,6 @@ useHead({
 
 const escapeRoomProgressStore = useEscapeRoomProgressStore()
 const escapeRoomTimerStore = useEscapeRoomTimerStore()
-
-onMounted(() => {
-  setInterval(() => {
-    escapeRoomTimerStore.decrement()
-  }, 1000)
-})
 </script>
 
 <template>

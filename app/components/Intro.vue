@@ -1,14 +1,22 @@
 <script setup lang="ts">
 const escapeRoomProgressStore = useEscapeRoomProgressStore()
+const escapeRoomTimerStore = useEscapeRoomTimerStore()
 
 const start = () => {
+  setInterval(() => {
+    escapeRoomTimerStore.decrement()
+  }, 1000)
   escapeRoomProgressStore.correctAnswer()
 }
+
+useHead({
+  title: 'Escape Room | Intro',
+})
 </script>
 
 <template>
   <h1 class="text-xl">
-    Speluitleg
+    Welkom, Jari!
   </h1>
   <div class="flex flex-col gap-4 text-2xl">
     <div>
