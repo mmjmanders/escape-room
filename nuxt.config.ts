@@ -7,7 +7,6 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@vite-pwa/nuxt',
     '@pinia/nuxt',
-    '@vueuse/nuxt',
     '@nuxt/icon',
   ],
   devtools: { enabled: true },

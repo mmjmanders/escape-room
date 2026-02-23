@@ -12,6 +12,7 @@ defineProps<{
     <Intro v-if="progress === 0" />
     <Question
       v-else
+      :key="progress"
       :progress="progress"
     />
   </div>

@@ -28,6 +28,14 @@ watch(status, (res) => {
     escapeRoomProgressStore.correctAnswer()
   }
 }, { immediate: false })
+
+watch(() => props.progress, async () => {
+  selectedAnswer.value = undefined
+})
+
+useHead({
+  title: `Escape Room | Vraag ${props.progress}`,
+})
 </script>
 
 <template>

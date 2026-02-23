@@ -1,12 +1,12 @@
 import type { Question } from '#shared/schemas/question'
 
 export default defineEventHandler(async () => ({
-  question: 'Wat was de eerste higdsgdst van JOB?',
+  question: 'Wat is de achternaam van Job?',
   type: 'choice',
   options: {
-    a: 'Per ongeluk verliefd',
-    b: 'Nostalgie',
-    c: 'Het perfecte plaatje',
+    a: 'van Grafhorst',
+    b: 'van Ramshorst',
+    c: 'van Rookworst',
   },
 } as Question),
 )
