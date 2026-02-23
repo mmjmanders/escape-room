@@ -1,5 +1,5 @@
 export const useEscapeRoomTimerStore = defineStore('escape-room-timer', () => {
-  const timer = useLocalStorage('escape-room-timer', 30 * 60)
+  const timer = useLocalStorage('escape-room-timer', 10 * 60)
   const penalized = ref<boolean>(false)
   const isExpired = computed(() => timer.value <= 0)
 

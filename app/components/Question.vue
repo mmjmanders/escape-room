@@ -7,20 +7,27 @@ const props = defineProps<{
 
 const selectedAnswer = ref<string | undefined>(undefined)
 const { data } = useFetch(`/api/question${props.progress}`)
-const { execute, error } = useFetch(`/api/question${props.progress}`, { immediate: false, watch: false, method: 'POST', body: computed(() => ({ answer: selectedAnswer.value })) })
+const { execute, error, status } = useFetch(`/api/question${props.progress}`, { immediate: false, watch: false, method: 'POST', body: computed(() => ({ answer: selectedAnswer.value })) })
 
 const submit = async () => {
   if (selectedAnswer.value) await execute()
 }
 
 const escapeRoomTimerStore = useEscapeRoomTimerStore()
+const escapeRoomProgressStore = useEscapeRoomProgressStore()
 
 watch(error, (err) => {
   if (err) {
     escapeRoomTimerStore.togglePenalty()
     setTimeout(escapeRoomTimerStore.togglePenalty, 5000)
   }
-})
+}, { immediate: false })
+
+watch(status, (res) => {
+  if (res === 'success') {
+    escapeRoomProgressStore.correctAnswer()
+  }
+}, { immediate: false })
 </script>
 
 <template>

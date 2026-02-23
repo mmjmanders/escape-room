@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Question from '~/components/Question.vue'
+import Intro from '~/components/Intro.vue'
 
 defineProps<{
   progress: number
@@ -8,7 +9,11 @@ defineProps<{
 
 <template>
   <div class="game-container">
-    <Question :progress="progress" />
+    <Intro v-if="progress === 0" />
+    <Question
+      v-else
+      :progress="progress"
+    />
   </div>
 </template>
 
