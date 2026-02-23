@@ -14,10 +14,12 @@ const start = () => {
     <div>
       <p>De escape room bestaat uit 5 vragen over je lievelingsartiest JOB.</p>
       <p>Als je alle 5 de vragen goed hebt, krijg je een beloning.</p>
-      <p>Let op: als je een vraag fout hebt, moet je 5 seconden wachten om het opnieuw te proberen. De totale tijd is maximaal 10 minuten.</p>
+      <p class="text-lg mt-2">
+        <span class="font-semibold">Let op:</span> als je een vraag fout hebt, moet je 5 seconden wachten om het opnieuw te proberen. De totale tijd is maximaal 10 minuten.
+      </p>
     </div>
     <button
-      class="w-fit disabled:cursor-not-allowed"
+      class="btn btn-primary w-fit disabled:cursor-not-allowed"
       type="button"
       @click="start"
     >
