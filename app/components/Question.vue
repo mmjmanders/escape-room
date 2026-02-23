@@ -7,7 +7,9 @@ const { data } = useFetch(`/api/question${props.progress}`)
 </script>
 
 <template>
-  <h1>Vraag {{ progress }}</h1>
+  <h1 class="text-xl">
+    Vraag {{ progress }}
+  </h1>
   <div class="flex flex-col gap-4 text-2xl">
     <div>{{ data?.question }}</div>
     <div class="flex flex-col gap-1">
@@ -21,15 +23,17 @@ const { data } = useFetch(`/api/question${props.progress}`)
           name="answer"
           type="radio"
           :value="option"
+          class="hover:cursor-pointer"
         >
-        <label :for="'option-' + option">{{ answer }}</label>
+        <label
+          :for="'option-' + option"
+          class="hover:cursor-pointer"
+        >{{ answer }}</label>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-input, label {
-  @apply hover:cursor-pointer;
-}
+
 </style>

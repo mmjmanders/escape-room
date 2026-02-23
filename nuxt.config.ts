@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt',
     '@pinia/nuxt',
     '@vueuse/nuxt',
+    '@nuxt/icon',
   ],
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],

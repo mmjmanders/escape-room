@@ -7,7 +7,9 @@ defineProps<{
 </script>
 
 <template>
-  <Question :progress="progress" />
+  <div class="game-container">
+    <Question :progress="progress" />
+  </div>
 </template>
 
 <style scoped>

@@ -13,8 +13,10 @@
     "preview": "nuxt preview"
   },
   "dependencies": {
+    "@iconify-json/material-symbols": "^1.2.57",
     "@nuxt/eslint": "1.15.1",
     "@nuxt/fonts": "0.14.0",
+    "@nuxt/icon": "2.2.1",
     "@pinia/nuxt": "0.11.3",
     "@vite-pwa/nuxt": "1.1.1",
     "@vueuse/nuxt": "14.2.1",

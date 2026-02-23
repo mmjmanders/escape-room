@@ -17,10 +17,23 @@ useHead({
 })
 
 const escapeRoomProgressStore = useEscapeRoomProgressStore()
+const escapeRoomTimerStore = useEscapeRoomTimerStore()
+
+onMounted(() => {
+  setInterval(() => {
+    escapeRoomTimerStore.decrement()
+  }, 1000)
+})
 </script>
 
 <template>
   <NuxtPwaManifest />
+  <header>
+    <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-8xl">
+      Escape Room
+    </h1>
+    <Timer :seconds-left="escapeRoomTimerStore.timer" />
+  </header>
   <main>
     <Game :progress="escapeRoomProgressStore.progress" />
   </main>
