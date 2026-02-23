@@ -36,7 +36,10 @@ watch(status, (res) => {
   </h1>
   <div class="flex flex-col gap-4 text-2xl">
     <div>{{ data?.question }}</div>
-    <div class="flex flex-col gap-1">
+    <div
+      v-if="data?.type === 'choice'"
+      class="flex flex-col gap-1"
+    >
       <div
         v-for="(answer, option) in data?.options"
         :key="option"
@@ -56,10 +59,17 @@ watch(status, (res) => {
         >{{ answer }}</label>
       </div>
     </div>
+    <div v-else-if="data?.type === 'open'">
+      <input
+        v-model="selectedAnswer"
+        name="answer"
+        type="text"
+      >
+    </div>
     <button
       class="btn btn-primary w-fit disabled:cursor-not-allowed"
       type="button"
-      :disabled="escapeRoomTimerStore.canSubmit"
+      :disabled="!escapeRoomTimerStore.canSubmit"
       @click="submit"
     >
       Versturen
