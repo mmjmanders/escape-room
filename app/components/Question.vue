@@ -91,7 +91,7 @@ useHead({
         >
       </div>
       <button
-        class="btn btn-primary w-fit disabled:cursor-not-allowed"
+        class="btn btn-primary"
         type="submit"
         :disabled="!escapeRoomTimerStore.canSubmit"
       >

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import job from '~/assets/job.jpg'
+
 useHead({
   title: 'Escape Room | Beloning',
 })
@@ -10,6 +12,13 @@ useHead({
   </h1>
   <div class="flex flex-col gap-4 text-2xl">
     <div>De beloning is&hellip; Kaartjes voor de show van JOB!</div>
+    <div>
+      <img
+        :src="job"
+        width="100%"
+        alt="job"
+      >
+    </div>
   </div>
 </template>
 
