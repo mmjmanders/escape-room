@@ -8,7 +8,12 @@ const props = defineProps<{
 const selectedAnswer = ref<string | undefined>(undefined)
 const showWrongAnswerMessage = ref<boolean>(false)
 const { data } = useFetch(`/api/question${props.progress}`)
-const { execute, error, status } = useFetch(`/api/question${props.progress}`, { immediate: false, watch: false, method: 'POST', body: computed(() => ({ answer: selectedAnswer.value })) })
+const { execute, error, status } = useFetch(`/api/question${props.progress}`, {
+  immediate: false,
+  watch: false,
+  method: 'POST',
+  body: computed(() => ({ answer: selectedAnswer.value })),
+})
 
 const submit = async () => {
   if (selectedAnswer.value) await execute()
@@ -48,46 +53,51 @@ useHead({
     Vraag {{ progress }}
   </h1>
   <div class="flex flex-col gap-4 text-2xl">
-    <div>{{ data?.question }}</div>
-    <div
-      v-if="data?.type === 'choice'"
-      class="flex flex-col gap-1"
+    <div v-html="data?.question" />
+    <form
+      novalidate
+      class="flex flex-col gap-4"
+      @submit.prevent="submit"
     >
       <div
-        v-for="(answer, option) in data?.options"
-        :key="option"
-        class="flex gap-2"
+        v-if="data?.type === 'choice'"
+        class="flex flex-col gap-1"
       >
-        <input
-          :id="'option-' + option"
-          v-model="selectedAnswer"
-          name="answer"
-          type="radio"
-          :value="option"
-          class="hover:cursor-pointer"
+        <div
+          v-for="(answer, option) in data?.options"
+          :key="option"
+          class="flex gap-2"
         >
-        <label
-          :for="'option-' + option"
-          class="hover:cursor-pointer"
-        >{{ answer }}</label>
+          <input
+            :id="'option-' + option"
+            v-model="selectedAnswer"
+            name="answer"
+            type="radio"
+            :value="option"
+            class="hover:cursor-pointer"
+          >
+          <label
+            :for="'option-' + option"
+            class="hover:cursor-pointer"
+          >{{ answer }}</label>
+        </div>
       </div>
-    </div>
-    <div v-else-if="data?.type === 'open'">
-      <input
-        v-model="selectedAnswer"
-        class="input"
-        name="answer"
-        type="text"
+      <div v-else-if="data?.type === 'open'">
+        <input
+          v-model="selectedAnswer"
+          class="input"
+          name="answer"
+          type="text"
+        >
+      </div>
+      <button
+        class="btn btn-primary w-fit disabled:cursor-not-allowed"
+        type="submit"
+        :disabled="!escapeRoomTimerStore.canSubmit"
       >
-    </div>
-    <button
-      class="btn btn-primary w-fit disabled:cursor-not-allowed"
-      type="button"
-      :disabled="!escapeRoomTimerStore.canSubmit"
-      @click="submit"
-    >
-      Versturen
-    </button>
+        Versturen
+      </button>
+    </form>
     <div
       v-if="showWrongAnswerMessage"
       class="wrong-answer"
