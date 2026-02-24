@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Question from '~/components/Question.vue'
 import Intro from '~/components/Intro.vue'
+import Reward from '~/components/Reward.vue'
 
 defineProps<{
   progress: number
@@ -11,10 +12,14 @@ const escapeRoomTimerStore = useEscapeRoomTimerStore()
 const interval = ref<number | undefined>(undefined)
 
 const onStart = () => {
-  setInterval(() => {
+  interval.value = setInterval(() => {
     escapeRoomTimerStore.decrement()
   }, 1000)
   escapeRoomProgressStore.correctAnswer()
+}
+
+const onComplete = () => {
+  clearInterval(interval.value)
 }
 
 watch(() => escapeRoomTimerStore.isExpired, (expired) => {
@@ -29,10 +34,15 @@ watch(() => escapeRoomTimerStore.isExpired, (expired) => {
       @start="onStart"
     />
     <Question
-      v-else
+      v-else-if="progress <= 5"
       :key="progress"
       :progress="progress"
     />
+    <Outro
+      v-else-if="progress === 6"
+      @complete="onComplete"
+    />
+    <Reward v-else />
   </div>
 </template>
 

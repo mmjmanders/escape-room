@@ -39,7 +39,7 @@ watch(status, (res) => {
   }
 }, { immediate: false })
 
-watch(() => props.progress, async () => {
+watch(() => props.progress, () => {
   selectedAnswer.value = undefined
 })
 
