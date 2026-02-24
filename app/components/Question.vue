@@ -6,6 +6,7 @@ const props = defineProps<{
 }>()
 
 const selectedAnswer = ref<string | undefined>(undefined)
+const showWrongAnswerMessage = ref<boolean>(false)
 const { data } = useFetch(`/api/question${props.progress}`)
 const { execute, error, status } = useFetch(`/api/question${props.progress}`, { immediate: false, watch: false, method: 'POST', body: computed(() => ({ answer: selectedAnswer.value })) })
 
@@ -17,9 +18,13 @@ const escapeRoomTimerStore = useEscapeRoomTimerStore()
 const escapeRoomProgressStore = useEscapeRoomProgressStore()
 
 watch(error, (err) => {
-  if (err) {
+  if (err && err.status === 406) {
+    showWrongAnswerMessage.value = true
     escapeRoomTimerStore.togglePenalty()
-    setTimeout(escapeRoomTimerStore.togglePenalty, 5000)
+    setTimeout(() => {
+      escapeRoomTimerStore.togglePenalty()
+      showWrongAnswerMessage.value = false
+    }, 5000)
   }
 }, { immediate: false })
 
@@ -83,6 +88,13 @@ useHead({
     >
       Versturen
     </button>
+    <div
+      v-if="showWrongAnswerMessage"
+      class="wrong-answer"
+    >
+      <Icon name="material-symbols:error-outline-rounded" />
+      Fout antwoord! Wacht 5 seconden.
+    </div>
   </div>
 </template>
 
