@@ -3,7 +3,6 @@ import favicon from '~/assets/favicon.svg'
 import appleTouchIcon from '~/assets/apple-touch-icon-180x180.png'
 
 useHead({
-  title: 'Escape Room',
   htmlAttrs: {
     lang: 'nl',
   },
@@ -17,10 +16,17 @@ useHead({
 })
 
 const escapeRoomProgressStore = useEscapeRoomProgressStore()
+const escapeRoomTimerStore = useEscapeRoomTimerStore()
 </script>
 
 <template>
   <NuxtPwaManifest />
+  <header>
+    <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-8xl">
+      Escape Room
+    </h1>
+    <Timer :seconds-left="escapeRoomTimerStore.timer" />
+  </header>
   <main>
     <Game :progress="escapeRoomProgressStore.progress" />
   </main>

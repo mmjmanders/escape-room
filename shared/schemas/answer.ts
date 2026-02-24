@@ -1,7 +1,7 @@
 import * as z from 'zod'
 
-export const answer = z.object({
-  answer: z.coerce.number(),
+export const answerSchema = z.object({
+  answer: z.string(),
 }).strip()
 
-export type Answer = z.infer<typeof answer>
+export type Answer = z.infer<typeof answerSchema>

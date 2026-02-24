@@ -1,5 +1,5 @@
 export const useEscapeRoomProgressStore = defineStore('escape-room-progress', () => {
-  const progress = useLocalStorage('escape-room-progress', 1)
+  const progress = ref<number>(0)
 
   function correctAnswer() {
     progress.value++

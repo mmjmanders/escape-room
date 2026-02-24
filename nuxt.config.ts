@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@vite-pwa/nuxt',
     '@pinia/nuxt',
-    '@vueuse/nuxt',
+    '@nuxt/icon',
   ],
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
@@ -38,6 +38,7 @@ export default defineNuxtConfig({
     manifest: {
       name: 'Escape Room',
       short_name: 'Escape Room',
+      lang: 'nl',
       icons: [
         {
           src: 'pwa-64x64.png',
