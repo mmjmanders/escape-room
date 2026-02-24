@@ -1,13 +1,7 @@
 <script setup lang="ts">
-const escapeRoomProgressStore = useEscapeRoomProgressStore()
-const escapeRoomTimerStore = useEscapeRoomTimerStore()
-
-const start = () => {
-  setInterval(() => {
-    escapeRoomTimerStore.decrement()
-  }, 1000)
-  escapeRoomProgressStore.correctAnswer()
-}
+const emit = defineEmits<{
+  start: []
+}>()
 
 useHead({
   title: 'Escape Room | Intro',
@@ -29,7 +23,7 @@ useHead({
     <button
       class="btn btn-primary w-fit disabled:cursor-not-allowed"
       type="button"
-      @click="start"
+      @click="emit('start')"
     >
       Start
     </button>

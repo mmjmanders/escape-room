@@ -105,6 +105,13 @@ useHead({
       <Icon name="material-symbols:error-outline-rounded" />
       Fout antwoord! Wacht 5 seconden.
     </div>
+    <div
+      v-if="escapeRoomTimerStore.isExpired"
+      class="wrong-answer"
+    >
+      <Icon name="material-symbols:timer-off-outline-rounded" />
+      Tijd is op! Probeer het nog een keer.
+    </div>
   </div>
 </template>
 
