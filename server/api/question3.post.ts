@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
   if (!result.success) {
     throw createError({ statusCode: 400, statusMessage: 'Error parsing answer' })
   }
-  else if (result.data.answer.toLowerCase().includes('waar kom je vandaan')) {
+  else if (!result.data.answer.toLowerCase().includes('waar kom je vandaan')) {
     throw createError({ statusCode: 406, statusMessage: 'Verkeerd antwoord' })
   }
   else setResponseStatus(event, 202)
