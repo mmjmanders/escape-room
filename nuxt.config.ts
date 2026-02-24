@@ -38,6 +38,7 @@ export default defineNuxtConfig({
     manifest: {
       name: 'Escape Room',
       short_name: 'Escape Room',
+      lang: 'nl',
       icons: [
         {
           src: 'pwa-64x64.png',

@@ -4,11 +4,12 @@
     --font-sans: 'Manrope', sans-serif;
     --font-serif: 'Petrona', serif;
     --font-mono: 'Fira Mono', monospace;
+    --color-primary: var(--color-neutral-950);
 }
 
 @layer base {
     html, body {
-        @apply font-sans;
+        @apply font-sans text-primary;
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -27,5 +28,9 @@
 @layer components {
     .btn {
         @apply rounded-md px-4 py-2 text-sm bg-blue-400 hover:cursor-pointer;
+    }
+
+    .input {
+        @apply rounded-md px-4 py-2 border border-primary;
     }
 }

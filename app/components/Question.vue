@@ -70,6 +70,7 @@ useHead({
     <div v-else-if="data?.type === 'open'">
       <input
         v-model="selectedAnswer"
+        class="input"
         name="answer"
         type="text"
       >
