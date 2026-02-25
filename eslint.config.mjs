@@ -6,7 +6,7 @@ export default withNuxt(
   {
     rules: {
       '@typescript-eslint/triple-slash-reference': 'off',
-      'vue/multi-word-component-names': 'warn',
+      'vue/multi-word-component-names': 'off',
     },
   },
 )
