@@ -9,7 +9,7 @@ export default $config({
     }
   },
   async run() {
-    new sst.aws.Nuxt('EscapeRoom', {
+    new sst.aws.Nuxt('Quiz', {
       server: {
         runtime: 'nodejs22.x',
       },
