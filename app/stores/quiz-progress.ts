@@ -1,4 +1,4 @@
-export const useEscapeRoomProgressStore = defineStore('escape-room-progress', () => {
+export const useQuizProgressStore = defineStore('quiz-progress', () => {
   const progress = ref<number>(0)
 
   function correctAnswer() {

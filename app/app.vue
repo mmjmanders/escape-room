@@ -15,8 +15,8 @@ useHead({
   ],
 })
 
-const escapeRoomProgressStore = useEscapeRoomProgressStore()
-const escapeRoomTimerStore = useEscapeRoomTimerStore()
+const escapeRoomProgressStore = useQuizProgressStore()
+const escapeRoomTimerStore = useQuizTimerStore()
 </script>
 
 <template>

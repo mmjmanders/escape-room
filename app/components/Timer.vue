@@ -4,7 +4,7 @@ const props = defineProps<{ secondsLeft: number }>()
 const minutes = computed(() => props.secondsLeft ? String(Math.floor(props.secondsLeft / 60)).padStart(2, '0') : '--')
 const seconds = computed(() => props.secondsLeft ? String(props.secondsLeft % 60).padStart(2, '0') : '--')
 
-const escapeRoomTimerStore = useEscapeRoomTimerStore()
+const escapeRoomTimerStore = useQuizTimerStore()
 </script>
 
 <template>

@@ -7,8 +7,8 @@ defineProps<{
   progress: number
 }>()
 
-const escapeRoomProgressStore = useEscapeRoomProgressStore()
-const escapeRoomTimerStore = useEscapeRoomTimerStore()
+const escapeRoomProgressStore = useQuizProgressStore()
+const escapeRoomTimerStore = useQuizTimerStore()
 const interval = ref<number | undefined>(undefined)
 
 const onStart = () => {

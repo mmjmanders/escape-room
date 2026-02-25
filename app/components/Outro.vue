@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const escapeRoomProgressStore = useEscapeRoomProgressStore()
+const escapeRoomProgressStore = useQuizProgressStore()
 
 const reward = () => {
   escapeRoomProgressStore.correctAnswer()

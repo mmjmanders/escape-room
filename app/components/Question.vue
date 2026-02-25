@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useEscapeRoomTimerStore } from '~/stores/escape-room-timer'
-
 const props = defineProps<{
   progress: number
 }>()
@@ -19,8 +17,8 @@ const submit = async () => {
   if (selectedAnswer.value) await execute()
 }
 
-const escapeRoomTimerStore = useEscapeRoomTimerStore()
-const escapeRoomProgressStore = useEscapeRoomProgressStore()
+const escapeRoomTimerStore = useQuizTimerStore()
+const escapeRoomProgressStore = useQuizProgressStore()
 
 watch(error, (err) => {
   if (err && err.status === 406) {
