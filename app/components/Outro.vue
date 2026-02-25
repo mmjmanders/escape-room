@@ -14,7 +14,7 @@ onMounted(() => {
 })
 
 useHead({
-  title: `Escape Room | Gefeliciteerd!`,
+  title: `Quiz | Gefeliciteerd!`,
 })
 </script>
 

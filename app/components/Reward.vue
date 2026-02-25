@@ -2,7 +2,7 @@
 import job from '~/assets/job.jpg'
 
 useHead({
-  title: 'Escape Room | Beloning',
+  title: 'Quiz | Beloning',
 })
 </script>
 

@@ -44,7 +44,7 @@ watch(() => props.progress, () => {
 })
 
 useHead({
-  title: `Escape Room | Vraag ${props.progress}`,
+  title: `Quiz | Vraag ${props.progress}`,
 })
 </script>
 
