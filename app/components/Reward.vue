@@ -11,7 +11,7 @@ useHead({
     Gefeliciteerd!
   </h1>
   <div class="flex flex-col gap-4 text-2xl">
-    <div>De beloning is&hellip; Kaartjes voor de show van JOB!</div>
+    <div>De beloning is&hellip; 2 kaartjes voor de show van JOB! Deze show is in de meivakantie op zondag 26 april in Tilburg.</div>
     <div>
       <img
         :src="job"
