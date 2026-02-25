@@ -11,23 +11,23 @@ useHead({
     { rel: 'apple-touch-icon', href: appleTouchIcon },
   ],
   meta: [
-    { name: 'description', content: 'Escape Room' },
+    { name: 'description', content: 'Quiz' },
   ],
 })
 
-const escapeRoomProgressStore = useEscapeRoomProgressStore()
-const escapeRoomTimerStore = useEscapeRoomTimerStore()
+const quizProgressStore = useQuizProgressStore()
+const quizTimerStore = useQuizTimerStore()
 </script>
 
 <template>
   <NuxtPwaManifest />
   <header>
     <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-8xl">
-      Escape Room
+      Quiz
     </h1>
-    <Timer :seconds-left="escapeRoomTimerStore.timer" />
+    <Timer :seconds-left="quizTimerStore.timer" />
   </header>
   <main>
-    <Game :progress="escapeRoomProgressStore.progress" />
+    <Game :progress="quizProgressStore.progress" />
   </main>
 </template>

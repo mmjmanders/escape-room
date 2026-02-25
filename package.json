@@ -20,15 +20,15 @@
     "@pinia/nuxt": "0.11.3",
     "@vite-pwa/nuxt": "1.1.1",
     "nuxt": "^4.3.1",
-    "sst": "3.19.0",
-    "tailwindcss": "^4.2.0",
-    "vue": "^3.5.28",
+    "sst": "3.19.3",
+    "tailwindcss": "^4.2.1",
+    "vue": "^3.5.29",
     "vue-router": "^4.6.4",
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.2.0",
-    "eslint": "^9.39.2",
+    "@tailwindcss/vite": "^4.2.1",
+    "eslint": "^9.39.3",
     "husky": "^9.1.7",
     "is-ci": "^4.1.0",
     "lint-staged": "^16.2.7",
@@ -37,5 +37,8 @@
   "packageManager": "pnpm@10.30.2+sha512.36cdc707e7b7940a988c9c1ecf88d084f8514b5c3f085f53a2e244c2921d3b2545bc20dd4ebe1fc245feec463bb298aecea7a63ed1f7680b877dc6379d8d0cb4",
   "overrides": {
     "nitropack": "npm:nitropack-nightly@latest"
+  },
+  "engines": {
+    "node": "^24.11.0"
   }
 }

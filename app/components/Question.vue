@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useEscapeRoomTimerStore } from '~/stores/escape-room-timer'
-
 const props = defineProps<{
   progress: number
 }>()
@@ -19,15 +17,15 @@ const submit = async () => {
   if (selectedAnswer.value) await execute()
 }
 
-const escapeRoomTimerStore = useEscapeRoomTimerStore()
-const escapeRoomProgressStore = useEscapeRoomProgressStore()
+const quizTimerStore = useQuizTimerStore()
+const quizProgressStore = useQuizProgressStore()
 
 watch(error, (err) => {
   if (err && err.status === 406) {
     showWrongAnswerMessage.value = true
-    escapeRoomTimerStore.togglePenalty()
+    quizTimerStore.togglePenalty()
     setTimeout(() => {
-      escapeRoomTimerStore.togglePenalty()
+      quizTimerStore.togglePenalty()
       showWrongAnswerMessage.value = false
     }, 5000)
   }
@@ -35,7 +33,7 @@ watch(error, (err) => {
 
 watch(status, (res) => {
   if (res === 'success') {
-    escapeRoomProgressStore.correctAnswer()
+    quizProgressStore.correctAnswer()
   }
 }, { immediate: false })
 
@@ -44,7 +42,7 @@ watch(() => props.progress, () => {
 })
 
 useHead({
-  title: `Escape Room | Vraag ${props.progress}`,
+  title: `Quiz | Vraag ${props.progress}`,
 })
 </script>
 
@@ -93,7 +91,7 @@ useHead({
       <button
         class="btn btn-primary"
         type="submit"
-        :disabled="!escapeRoomTimerStore.canSubmit"
+        :disabled="!quizTimerStore.canSubmit"
       >
         Versturen
       </button>
@@ -106,7 +104,7 @@ useHead({
       Fout antwoord! Wacht 5 seconden.
     </div>
     <div
-      v-if="escapeRoomTimerStore.isExpired"
+      v-if="quizTimerStore.isExpired"
       class="wrong-answer"
     >
       <Icon name="material-symbols:timer-off-outline-rounded" />

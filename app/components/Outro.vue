@@ -1,8 +1,8 @@
 <script setup lang="ts">
-const escapeRoomProgressStore = useEscapeRoomProgressStore()
+const quizProgressStore = useQuizProgressStore()
 
 const reward = () => {
-  escapeRoomProgressStore.correctAnswer()
+  quizProgressStore.correctAnswer()
 }
 
 const emit = defineEmits<{
@@ -14,7 +14,7 @@ onMounted(() => {
 })
 
 useHead({
-  title: `Escape Room | Gefeliciteerd!`,
+  title: `Quiz | Gefeliciteerd!`,
 })
 </script>
 

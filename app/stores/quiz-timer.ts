@@ -1,5 +1,5 @@
-export const useEscapeRoomTimerStore = defineStore('escape-room-timer', () => {
-  const timer = ref<number>(10 * 60)
+export const useQuizTimerStore = defineStore('quiz-timer', () => {
+  const timer = ref<number>(5 * 60)
   const penalized = ref<boolean>(false)
   const isExpired = computed(() => timer.value <= 0)
   const canSubmit = computed(() => !isExpired.value && !penalized.value)
