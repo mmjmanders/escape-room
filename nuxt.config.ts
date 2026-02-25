@@ -29,6 +29,10 @@ export default defineNuxtConfig({
       stylistic: true,
     },
   },
+  icon: {
+    mode: 'css',
+    cssLayer: 'base',
+  },
   pwa: {
     devOptions: {
       enabled: true,
