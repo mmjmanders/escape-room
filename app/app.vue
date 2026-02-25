@@ -11,12 +11,12 @@ useHead({
     { rel: 'apple-touch-icon', href: appleTouchIcon },
   ],
   meta: [
-    { name: 'description', content: 'Escape Room' },
+    { name: 'description', content: 'Quiz' },
   ],
 })
 
-const escapeRoomProgressStore = useQuizProgressStore()
-const escapeRoomTimerStore = useQuizTimerStore()
+const quizProgressStore = useQuizProgressStore()
+const quizTimerStore = useQuizTimerStore()
 </script>
 
 <template>
@@ -25,9 +25,9 @@ const escapeRoomTimerStore = useQuizTimerStore()
     <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-8xl">
       Quiz
     </h1>
-    <Timer :seconds-left="escapeRoomTimerStore.timer" />
+    <Timer :seconds-left="quizTimerStore.timer" />
   </header>
   <main>
-    <Game :progress="escapeRoomProgressStore.progress" />
+    <Game :progress="quizProgressStore.progress" />
   </main>
 </template>

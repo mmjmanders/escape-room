@@ -17,15 +17,15 @@ const submit = async () => {
   if (selectedAnswer.value) await execute()
 }
 
-const escapeRoomTimerStore = useQuizTimerStore()
-const escapeRoomProgressStore = useQuizProgressStore()
+const quizTimerStore = useQuizTimerStore()
+const quizProgressStore = useQuizProgressStore()
 
 watch(error, (err) => {
   if (err && err.status === 406) {
     showWrongAnswerMessage.value = true
-    escapeRoomTimerStore.togglePenalty()
+    quizTimerStore.togglePenalty()
     setTimeout(() => {
-      escapeRoomTimerStore.togglePenalty()
+      quizTimerStore.togglePenalty()
       showWrongAnswerMessage.value = false
     }, 5000)
   }
@@ -33,7 +33,7 @@ watch(error, (err) => {
 
 watch(status, (res) => {
   if (res === 'success') {
-    escapeRoomProgressStore.correctAnswer()
+    quizProgressStore.correctAnswer()
   }
 }, { immediate: false })
 
@@ -91,7 +91,7 @@ useHead({
       <button
         class="btn btn-primary"
         type="submit"
-        :disabled="!escapeRoomTimerStore.canSubmit"
+        :disabled="!quizTimerStore.canSubmit"
       >
         Versturen
       </button>
@@ -104,7 +104,7 @@ useHead({
       Fout antwoord! Wacht 5 seconden.
     </div>
     <div
-      v-if="escapeRoomTimerStore.isExpired"
+      v-if="quizTimerStore.isExpired"
       class="wrong-answer"
     >
       <Icon name="material-symbols:timer-off-outline-rounded" />

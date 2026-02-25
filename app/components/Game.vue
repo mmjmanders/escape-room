@@ -7,22 +7,22 @@ defineProps<{
   progress: number
 }>()
 
-const escapeRoomProgressStore = useQuizProgressStore()
-const escapeRoomTimerStore = useQuizTimerStore()
+const quizProgressStore = useQuizProgressStore()
+const quizTimerStore = useQuizTimerStore()
 const interval = ref<number | undefined>(undefined)
 
 const onStart = () => {
   interval.value = setInterval(() => {
-    escapeRoomTimerStore.decrement()
+    quizTimerStore.decrement()
   }, 1000)
-  escapeRoomProgressStore.correctAnswer()
+  quizProgressStore.correctAnswer()
 }
 
 const onComplete = () => {
   clearInterval(interval.value)
 }
 
-watch(() => escapeRoomTimerStore.isExpired, (expired) => {
+watch(() => quizTimerStore.isExpired, (expired) => {
   if (expired) clearInterval(interval.value)
 })
 </script>

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-const escapeRoomProgressStore = useQuizProgressStore()
+const quizProgressStore = useQuizProgressStore()
 
 const reward = () => {
-  escapeRoomProgressStore.correctAnswer()
+  quizProgressStore.correctAnswer()
 }
 
 const emit = defineEmits<{
