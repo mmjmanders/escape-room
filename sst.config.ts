@@ -3,16 +3,12 @@
 export default $config({
   app(input) {
     return {
-      name: 'escape-room',
+      name: 'quiz',
       removal: input?.stage === 'production' ? 'retain' : 'remove',
       home: 'aws',
     }
   },
   async run() {
-    new sst.aws.Nuxt('Quiz', {
-      server: {
-        runtime: 'nodejs22.x',
-      },
-    })
+    new sst.aws.Nuxt('Quiz')
   },
 })
