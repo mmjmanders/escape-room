@@ -13,7 +13,7 @@
     "preview": "nuxt preview"
   },
   "dependencies": {
-    "@iconify-json/material-symbols": "^1.2.57",
+    "@iconify-json/material-symbols": "^1.2.58",
     "@nuxt/eslint": "1.15.2",
     "@nuxt/fonts": "0.14.0",
     "@nuxt/icon": "2.2.1",
