@@ -6,10 +6,6 @@
 
 declare module "sst" {
   export interface Resource {
-    "Quiz": {
-      "type": "sst.aws.Nuxt"
-      "url": string
-    }
   }
 }
 /// <reference path="sst-env.d.ts" />
