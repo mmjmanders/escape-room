@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "lint:staged": "lint-staged",
     "postinstall": "nuxt prepare",
-    "prepare": "is-ci || (husky && sst install)",
+    "prepare": "is-ci || husky",
     "preview": "nuxt preview"
   },
   "dependencies": {
@@ -20,7 +20,6 @@
     "@pinia/nuxt": "0.11.3",
     "@vite-pwa/nuxt": "1.1.1",
     "nuxt": "^4.3.1",
-    "sst": "4.0.5",
     "tailwindcss": "^4.2.1",
     "vue": "^3.5.29",
     "vue-router": "^4.6.4",
