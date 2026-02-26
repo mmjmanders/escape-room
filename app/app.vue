@@ -23,7 +23,7 @@ const quizTimerStore = useQuizTimerStore()
   <NuxtPwaManifest />
   <header>
     <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-blue-900 tracking-tight">
-      Escape Room
+      Quiz
     </h1>
     <Timer :seconds-left="quizTimerStore.timer" />
   </header>
