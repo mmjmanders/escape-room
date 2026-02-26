@@ -9,8 +9,13 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxt/icon',
   ],
-  devtools: { enabled: true },
+  devtools: {
+    enabled: true,
+  },
   css: ['~/assets/css/main.css'],
+  devServer: {
+    host: '0.0.0.0',
+  },
   future: {
     compatibilityVersion: 4,
   },
@@ -24,10 +29,15 @@ export default defineNuxtConfig({
       noExternal: ['vue', 'vue-router'],
     },
   },
+  telemetry: false,
   eslint: {
     config: {
       stylistic: true,
     },
+  },
+  icon: {
+    mode: 'css',
+    cssLayer: 'base',
   },
   pwa: {
     devOptions: {

@@ -22,7 +22,7 @@ const quizTimerStore = useQuizTimerStore()
 <template>
   <NuxtPwaManifest />
   <header>
-    <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-8xl">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-blue-900 tracking-tight">
       Quiz
     </h1>
     <Timer :seconds-left="quizTimerStore.timer" />

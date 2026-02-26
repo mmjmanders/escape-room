@@ -4,38 +4,59 @@
     --font-sans: 'Roboto', sans-serif;
     --font-serif: 'Roboto Serif', serif;
     --font-mono: 'Roboto Mono', monospace;
-    --color-primary: var(--color-neutral-950);
-    --color-secondary: var(--color-neutral-50);
+    --color-primary: var(--color-blue-900);
+    --color-secondary: var(--color-white);
+    --color-accent: var(--color-blue-600);
 }
 
 @layer base {
     html, body {
-        @apply font-sans text-primary;
+        @apply font-sans text-primary min-h-screen;
+    }
+
+    body {
+        @apply bg-linear-to-br from-blue-100 to-indigo-200;
     }
 
     h1, h2, h3, h4, h5, h6 {
-        @apply font-serif font-bold;
+        @apply font-serif font-bold tracking-tight;
     }
 
     header {
-        @apply w-full flex justify-center h-auto items-center relative mb-2;
+        @apply w-full flex flex-col justify-center items-center py-8 gap-4 relative;
     }
 
     main {
-        @apply w-full max-w-4xl mx-auto flex flex-col gap-2 p-2;
+        @apply w-full max-w-2xl mx-auto p-4;
     }
 }
 
 @layer components {
+    .card {
+        @apply bg-white/80 backdrop-blur-md rounded-2xl shadow-xl p-6 sm:p-8 border border-white/20;
+    }
+
     .btn {
-        @apply rounded-md px-4 py-2 text-sm bg-blue-400 hover:cursor-pointer disabled:cursor-not-allowed w-fit disabled:opacity-60;
+        @apply rounded-xl px-6 py-3 font-semibold transition-all duration-200 hover:scale-105 active:scale-95 hover:cursor-pointer disabled:cursor-not-allowed w-fit disabled:opacity-50 disabled:hover:scale-100;
+    }
+
+    .btn-primary {
+        @apply bg-blue-600 text-white shadow-lg shadow-blue-500/30 hover:bg-blue-700;
     }
 
     .input {
-        @apply rounded-md px-4 py-2 border border-primary;
+        @apply rounded-xl px-4 py-3 border-2 border-blue-100 focus:border-blue-500 outline-none transition-colors bg-white/50 focus:bg-white;
     }
 
     .wrong-answer {
-        @apply flex gap-2 w-fit items-center px-4 py-2 rounded-md bg-red-400 text-secondary text-lg;
+        @apply flex gap-3 w-full items-center px-4 py-3 rounded-xl bg-red-100 text-red-700 border border-red-200 font-medium;
+    }
+
+    .radio-option {
+        @apply flex items-center gap-3 p-4 rounded-xl border-2 border-blue-50 border-transparent transition-all cursor-pointer hover:bg-blue-50/50;
+    }
+
+    .radio-option:has(input:checked) {
+        @apply border-blue-500 bg-blue-50 shadow-sm;
     }
 }

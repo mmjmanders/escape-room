@@ -28,24 +28,43 @@ watch(() => quizTimerStore.isExpired, (expired) => {
 </script>
 
 <template>
-  <div class="game-container">
-    <Intro
-      v-if="progress === 0"
-      @start="onStart"
-    />
-    <Question
-      v-else-if="progress <= 5"
-      :key="progress"
-      :progress="progress"
-    />
-    <Outro
-      v-else-if="progress === 6"
-      @complete="onComplete"
-    />
-    <Reward v-else />
+  <div class="card">
+    <Transition
+      mode="out-in"
+      name="fade"
+    >
+      <div :key="progress">
+        <Intro
+          v-if="progress === 0"
+          @start="onStart"
+        />
+        <Question
+          v-else-if="progress <= 5"
+          :progress="progress"
+        />
+        <Outro
+          v-else-if="progress === 6"
+          @complete="onComplete"
+        />
+        <Reward v-else />
+      </div>
+    </Transition>
   </div>
 </template>
 
 <style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
 
+.fade-enter-from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
 </style>
