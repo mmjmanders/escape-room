@@ -29,6 +29,7 @@ export default defineNuxtConfig({
       noExternal: ['vue', 'vue-router'],
     },
   },
+  telemetry: false,
   eslint: {
     config: {
       stylistic: true,
