@@ -17,9 +17,10 @@ jobs:
       - run: pnpm i --frozen-lockfile
       - uses: actions/setup-python@v6
         with:
-          python-version: 3.14
+          python-version: 3.13
           cache: pip
           pip-install: -r requirements.txt
+      - run: alias aws='awsv2'
       - run: pnpm exec sst remove --stage production
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
