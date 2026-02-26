@@ -22,6 +22,9 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   vite: {
     plugins: [tailwindcss()],
+    ssr: {
+      noExternal: ['vue', 'vue-router'],
+    },
   },
   telemetry: false,
   eslint: {
