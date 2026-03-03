@@ -3,7 +3,14 @@ allowBuilds:
   aws-sdk: true
   esbuild: true
   unrs-resolver: true
+
 blockExoticSubdeps: true
+
 minimumReleaseAge: 1440
+
+overrides:
+  serialize-javascript@<=7.0.2: '>=7.0.3'
+
 trustPolicy: no-downgrade
+
 trustPolicyIgnoreAfter: 1440

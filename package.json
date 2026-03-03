@@ -13,7 +13,7 @@
     "preview": "nuxt preview"
   },
   "dependencies": {
-    "@iconify-json/material-symbols": "^1.2.58",
+    "@iconify-json/material-symbols": "^1.2.59",
     "@nuxt/eslint": "1.15.2",
     "@nuxt/fonts": "0.14.0",
     "@nuxt/icon": "2.2.1",
@@ -30,7 +30,7 @@
     "eslint": "^9.39.3",
     "husky": "^9.1.7",
     "is-ci": "^4.1.0",
-    "lint-staged": "^16.2.7",
+    "lint-staged": "^16.3.1",
     "typescript": "^5.9.3"
   },
   "packageManager": "pnpm@10.30.3+sha512.c961d1e0a2d8e354ecaa5166b822516668b7f44cb5bd95122d590dd81922f606f5473b6d23ec4a5be05e7fcd18e8488d47d978bbe981872f1145d06e9a740017",
