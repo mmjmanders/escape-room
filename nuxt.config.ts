@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxt/icon',
   ],
+  pages: false,
   devtools: {
     enabled: true,
   },
@@ -23,7 +24,7 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
     ssr: {
-      noExternal: ['vue', 'vue-router'],
+      noExternal: ['vue'],
     },
   },
   telemetry: false,
