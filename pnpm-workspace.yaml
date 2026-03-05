@@ -10,6 +10,8 @@ minimumReleaseAge: 1440
 
 overrides:
   serialize-javascript@<=7.0.2: '>=7.0.3'
+  svgo@=4.0.0: '>=4.0.1'
+  tar@<=7.5.9: '>=7.5.10'
 
 trustPolicy: no-downgrade
 
