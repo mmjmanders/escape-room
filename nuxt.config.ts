@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt',
     '@pinia/nuxt',
     '@nuxt/icon',
+    '@nuxt/image',
   ],
   pages: false,
   devtools: {
