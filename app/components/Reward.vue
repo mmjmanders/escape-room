@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import job from '~/assets/job.jpg'
-
 useHead({
   title: 'Quiz | Beloning',
 })
@@ -26,7 +24,7 @@ useHead({
     <div class="relative group mt-4">
       <div class="absolute -inset-1 bg-linear-to-r from-blue-600 to-indigo-600 rounded-2xl blur-md opacity-25 group-hover:opacity-50 transition duration-1000" />
       <NuxtImg
-        :src="job"
+        src="/assets/job.jpg"
         class="relative rounded-xl shadow-2xl w-full border-4 border-white"
         alt="JOB show"
       />
