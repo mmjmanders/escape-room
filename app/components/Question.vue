@@ -5,8 +5,8 @@ const props = defineProps<{
 
 const selectedAnswer = ref<string | undefined>(undefined)
 const showWrongAnswerMessage = ref<boolean>(false)
-const { data } = useFetch(`/api/question${props.progress}`)
-const { execute, error, status } = useFetch(`/api/question${props.progress}`, {
+const { data } = useFetch(`/api/questions/${props.progress}`)
+const { execute, error, status } = useFetch(`/api/questions/${props.progress}`, {
   immediate: false,
   watch: false,
   method: 'POST',
@@ -34,6 +34,14 @@ watch(error, (err) => {
 watch(status, (res) => {
   if (res === 'success') {
     quizProgressStore.correctAnswer()
+
+    // Navigate to next question or outro
+    if (props.progress < 5) {
+      navigateTo(`/questions/${props.progress + 1}`)
+    }
+    else {
+      navigateTo('/outro')
+    }
   }
 }, { immediate: false })
 

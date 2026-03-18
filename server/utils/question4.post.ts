@@ -3,10 +3,10 @@ import { answerSchema } from '#shared/schemas/answer'
 export default defineEventHandler(async (event) => {
   const result = await readValidatedBody(event, answer => answerSchema.safeParse(answer))
   if (!result.success) {
-    throw createError({ statusCode: 400, statusMessage: 'Error parsing answer' })
+    throw createError({ statusCode: 400, message: 'Error parsing answer' })
   }
-  else if (!result.data.answer.toLowerCase().includes('waar kom je vandaan')) {
-    throw createError({ statusCode: 406, statusMessage: 'Verkeerd antwoord' })
+  else if (result.data.answer !== 'b') {
+    throw createError({ statusCode: 406, message: 'Verkeerd antwoord' })
   }
   else setResponseStatus(event, 202)
 })
