@@ -21,7 +21,7 @@ const questions: Record<number, Record<string, EventHandler>> = {
 
 router.use('/**', defineEventHandler(async (event) => {
   const questionId: number = Number(getRouterParam(event, '_'))
-  const method = getMethod(event).toLowerCase()
+  const method = event.method.toLowerCase()
 
   if (questionId && questions[questionId] && questions[questionId][method]) {
     return questions[questionId][method](event)
