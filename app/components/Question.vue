@@ -34,6 +34,14 @@ watch(error, (err) => {
 watch(status, (res) => {
   if (res === 'success') {
     quizProgressStore.correctAnswer()
+
+    // Navigate to next question or outro
+    if (props.progress < 5) {
+      navigateTo(`/questions/${props.progress + 1}`)
+    }
+    else {
+      navigateTo('/outro')
+    }
   }
 }, { immediate: false })
 

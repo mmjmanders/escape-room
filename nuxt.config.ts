@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/image',
   ],
-  pages: false,
+  pages: true,
   devtools: {
     enabled: true,
   },
@@ -25,7 +25,7 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
     ssr: {
-      noExternal: ['vue'],
+      noExternal: ['vue', 'vue-router'],
     },
   },
   telemetry: false,

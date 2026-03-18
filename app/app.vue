@@ -15,7 +15,6 @@ useHead({
   ],
 })
 
-const quizProgressStore = useQuizProgressStore()
 const quizTimerStore = useQuizTimerStore()
 </script>
 
@@ -28,6 +27,6 @@ const quizTimerStore = useQuizTimerStore()
     <Timer :seconds-left="quizTimerStore.timer" />
   </header>
   <main>
-    <Game :progress="quizProgressStore.progress" />
+    <NuxtPage />
   </main>
 </template>
